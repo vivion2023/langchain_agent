@@ -10,9 +10,10 @@
 | 1 | 环境搭建 | 进行中 | [docs/01_langchain环境搭建.md](docs/01_langchain环境搭建.md) |
 | 2 | LLM 基础调用 | ✅ 已完成 | [00_LLM应用.ipynb](00_LLM应用.ipynb) · [docs/02_LLM基础调用.md](docs/02_LLM基础调用.md) |
 | 3 | Ollama 本地模型 | ✅ 已完成 | [docs/03_ollama搭建本地模型.md](docs/03_ollama搭建本地模型.md) |
-| 4 | Prompt 与 LCEL | 待开始 | — |
-| 5 | Tools 与 Agent | 待开始 | — |
-| 6 | RAG 检索增强 | 待开始 | — |
+| 4 | 提示词模板 | ✅ 已完成 | [01_langchain关键对象.ipynb](01_langchain关键对象.ipynb) · [docs/04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
+| 5 | LCEL 链式调用 | 待开始 | — |
+| 6 | Tools 与 Agent | 待开始 | — |
+| 7 | RAG 检索增强 | 待开始 | — |
 
 ## 项目结构
 
@@ -20,12 +21,14 @@
 langchain_agent/
 ├── README.md                 # 本文件：学习地图与快速入口
 ├── .env                      # API Key 配置（勿提交到 Git）
-├── 00_LLM应用.ipynb          # 第一章实验：云端 + 本地 LLM 调用
+├── 00_LLM应用.ipynb              # 第一章实验：云端 + 本地 LLM 调用
+├── 01_langchain关键对象.ipynb    # 第二章实验：PromptTemplate / ChatPromptTemplate
 └── docs/
     ├── 00_langchain是什么.md
     ├── 01_langchain环境搭建.md
     ├── 02_LLM基础调用.md
-    └── 03_ollama搭建本地模型.md
+    ├── 03_ollama搭建本地模型.md
+    └── 04_langchain提示词模板.md
 ```
 
 ## 环境要求
@@ -80,6 +83,16 @@ ollama run deepseek-r1:1.5b
 | 01 | 加载 `.env` 与 API Key | [01_langchain环境搭建.md](docs/01_langchain环境搭建.md) |
 | 02 | 云端 DeepSeek（`ChatOpenAI`） | [02_LLM基础调用.md](docs/02_LLM基础调用.md) |
 | 03 | 本地 Ollama（`OllamaLLM`） | [03_ollama搭建本地模型.md](docs/03_ollama搭建本地模型.md) |
+
+## 第二章做了什么
+
+`01_langchain关键对象.ipynb` 按序号包含三节：
+
+| 序号 | 内容 | 文档 |
+|------|------|------|
+| 01 | 加载 `.env` 与 API Key | [01_langchain环境搭建.md](docs/01_langchain环境搭建.md) |
+| 02 | 字符串模板（`PromptTemplate`） | [04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
+| 03 | 对话模板（`ChatPromptTemplate`） | [04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
 
 ## 文档撰写原则
 

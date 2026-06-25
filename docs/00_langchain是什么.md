@@ -26,7 +26,7 @@ LangChain 很像 Agent 的「万能工具箱」，但没那么「万能」——
 - **记忆（Memory）**：存对话历史或用户数据。
 - **检索（RAG）**：从知识库或网上抓取最新信息。
 
-在本学习路线中，后续章节会依次接触这些能力：先调通 LLM（[02_LLM基础调用.md](02_LLM基础调用.md)），再逐步扩展到 Prompt、Tools、Agent、RAG 等。
+在本学习路线中，后续章节会依次接触这些能力：先调通 LLM（[02_LLM基础调用.md](02_LLM基础调用.md)），再学习提示词模板（[04_langchain提示词模板.md](04_langchain提示词模板.md)），逐步扩展到 Tools、Agent、RAG 等。
 
 ## 我的理解
 
