@@ -7,14 +7,12 @@
 | 阶段 | 主题 | 状态 | 代码 / 文档 |
 |------|------|------|-------------|
 | 0 | LangChain 是什么 | ✅ 已完成 | [docs/00_langchain是什么.md](docs/00_langchain是什么.md) |
-| 1 | 环境搭建 | 进行中 | [docs/01_langchain环境搭建.md](docs/01_langchain环境搭建.md) |
+| 1 | 环境搭建 | ✅ 已完成 | [docs/01_langchain环境搭建.md](docs/01_langchain环境搭建.md) |
 | 2 | LLM 基础调用 | ✅ 已完成 | [00_LLM应用.ipynb](00_LLM应用.ipynb) · [docs/02_LLM基础调用.md](docs/02_LLM基础调用.md) |
 | 3 | Ollama 本地模型 | ✅ 已完成 | [docs/03_ollama搭建本地模型.md](docs/03_ollama搭建本地模型.md) |
 | 4 | 提示词模板 | ✅ 已完成 | [01_langchain关键对象.ipynb](01_langchain关键对象.ipynb) · [docs/04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
 | 5 | 输出格式化 | ✅ 已完成 | [01_langchain关键对象.ipynb](01_langchain关键对象.ipynb) · [docs/05_输出格式化.md](docs/05_输出格式化.md) |
-| 6 | LCEL 链式调用 | 待开始 | — |
-| 7 | Tools 与 Agent | 待开始 | — |
-| 8 | RAG 检索增强 | 待开始 | — |
+| 6 | LCEL 链式调用 | ✅ 已完成 | [01_langchain关键对象.ipynb](01_langchain关键对象.ipynb) · [docs/05_输出格式化.md](docs/05_输出格式化.md) |
 
 ## 项目结构
 
@@ -22,8 +20,9 @@
 langchain_agent/
 ├── README.md                 # 本文件：学习地图与快速入口
 ├── .env                      # API Key 配置（勿提交到 Git）
+├── .env.example              # 环境变量模板（复制为 .env 后填入真实值）
 ├── 00_LLM应用.ipynb              # 第一章实验：云端 + 本地 LLM 调用
-├── 01_langchain关键对象.ipynb    # 第二章实验：PromptTemplate / ChatPromptTemplate
+├── 01_langchain关键对象.ipynb    # 第二章实验：提示词模板 / 输出格式化 / LCEL
 └── docs/
     ├── 00_langchain是什么.md
     ├── 01_langchain环境搭建.md
@@ -41,34 +40,44 @@ langchain_agent/
 
 | 包名 | 版本 |
 |------|------|
+| langchain | 1.3.11 |
 | langchain-core | 1.4.8 |
 | langchain-openai | 1.3.3 |
 | langchain-ollama | 1.1.0 |
 | langchain-deepseek | 1.1.0 |
+| langchain-community | 0.4.2 |
+| langchain-classic | 1.0.8 |
 | python-dotenv | 1.2.2 |
 
 ## 快速开始
 
 ### 1. 配置环境变量
 
-在项目根目录创建 `.env`：
+复制 `.env.example` 为 `.env` 并填入真实 API Key：
 
-```env
-DEEPSEEK_API_KEY=your_deepseek_api_key
-LANGCHAIN_API_KEY=your_langsmith_api_key
-LANGCHAIN_TRACING_V2=true
+```bash
+cp .env.example .env   # Windows: copy .env.example .env
 ```
 
-### 2. 启动 Jupyter
+### 2. 安装依赖
 
 ```bash
 conda activate langagent
+pip install langchain langchain-openai langchain-ollama langchain-deepseek langchain-community python-dotenv jupyter
+```
+
+### 3. 启动 Jupyter
+
+```bash
 jupyter notebook
 ```
 
-打开 `00_LLM应用.ipynb`，按顺序运行单元格。
+按学习进度打开对应 Notebook，从 **01 环境搭建** 单元格开始按序运行：
 
-### 3. 本地模型（可选）
+- [00_LLM应用.ipynb](00_LLM应用.ipynb) — LLM 基础调用与 Ollama
+- [01_langchain关键对象.ipynb](01_langchain关键对象.ipynb) — 提示词模板、输出格式化、LCEL
+
+### 4. 本地模型（可选）
 
 需先安装 [Ollama](https://ollama.com/) 并下载模型（`pull` 或 `run` 均可，本地没有时 `run` 会自动下载）：
 
@@ -88,7 +97,7 @@ ollama run deepseek-r1:1.5b
 
 ## 第二章做了什么
 
-`01_langchain关键对象.ipynb` 按序号包含三节：
+`01_langchain关键对象.ipynb` 按序号包含五节：
 
 | 序号 | 内容 | 文档 |
 |------|------|------|
@@ -96,6 +105,7 @@ ollama run deepseek-r1:1.5b
 | 02 | 字符串模板（`PromptTemplate`） | [04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
 | 03 | 对话模板（`ChatPromptTemplate`） | [04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
 | 04 | 输出格式化（`StructuredOutputParser`） | [05_输出格式化.md](docs/05_输出格式化.md) |
+| 05 | LCEL 链式调用（`prompt → model → parser`） | [05_输出格式化.md](docs/05_输出格式化.md#链式调用精简写法) |
 
 ## 文档撰写原则
 
