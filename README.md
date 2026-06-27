@@ -11,9 +11,10 @@
 | 2 | LLM 基础调用 | ✅ 已完成 | [00_LLM应用.ipynb](00_LLM应用.ipynb) · [docs/02_LLM基础调用.md](docs/02_LLM基础调用.md) |
 | 3 | Ollama 本地模型 | ✅ 已完成 | [docs/03_ollama搭建本地模型.md](docs/03_ollama搭建本地模型.md) |
 | 4 | 提示词模板 | ✅ 已完成 | [01_langchain关键对象.ipynb](01_langchain关键对象.ipynb) · [docs/04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
-| 5 | LCEL 链式调用 | 待开始 | — |
-| 6 | Tools 与 Agent | 待开始 | — |
-| 7 | RAG 检索增强 | 待开始 | — |
+| 5 | 输出格式化 | ✅ 已完成 | [01_langchain关键对象.ipynb](01_langchain关键对象.ipynb) · [docs/05_输出格式化.md](docs/05_输出格式化.md) |
+| 6 | LCEL 链式调用 | 待开始 | — |
+| 7 | Tools 与 Agent | 待开始 | — |
+| 8 | RAG 检索增强 | 待开始 | — |
 
 ## 项目结构
 
@@ -28,7 +29,8 @@ langchain_agent/
     ├── 01_langchain环境搭建.md
     ├── 02_LLM基础调用.md
     ├── 03_ollama搭建本地模型.md
-    └── 04_langchain提示词模板.md
+    ├── 04_langchain提示词模板.md
+    └── 05_输出格式化.md
 ```
 
 ## 环境要求
@@ -93,6 +95,7 @@ ollama run deepseek-r1:1.5b
 | 01 | 加载 `.env` 与 API Key | [01_langchain环境搭建.md](docs/01_langchain环境搭建.md) |
 | 02 | 字符串模板（`PromptTemplate`） | [04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
 | 03 | 对话模板（`ChatPromptTemplate`） | [04_langchain提示词模板.md](docs/04_langchain提示词模板.md) |
+| 04 | 输出格式化（`StructuredOutputParser`） | [05_输出格式化.md](docs/05_输出格式化.md) |
 
 ## 文档撰写原则
 
